@@ -154,7 +154,7 @@ WITH product_sales AS (
     SELECT p.productid, p.productname, SUM(od.quantity * p.unitprice) AS total_sales
     FROM products as p
     JOIN order_details as od ON p.productid = od.productid
-    GROUP BY p.productid, p.productname
+    GROUP BY p.productid, p.productname 
 )
 SELECT productid, productname, total_sales
 FROM product_sales
